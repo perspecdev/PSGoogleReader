@@ -6,7 +6,7 @@
 
 
 @interface EntitiesConverter : NSObject <NSXMLParserDelegate> {
-    NSMutableString *resultString;
+	NSMutableString *resultString;
 }
 
 @property (nonatomic, retain) NSMutableString *resultString;

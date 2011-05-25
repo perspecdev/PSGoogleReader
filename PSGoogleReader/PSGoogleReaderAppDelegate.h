@@ -15,8 +15,8 @@
 @class DetailViewController;
 
 @interface PSGoogleReaderAppDelegate : NSObject <UIApplicationDelegate, PSGooglReaderDelegate> {
-    PSGoogleReader *googleReader;
-    int networkActivityCounter;
+	PSGoogleReader *googleReader;
+	int networkActivityCounter;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

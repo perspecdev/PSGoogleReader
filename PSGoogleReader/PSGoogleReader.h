@@ -59,12 +59,12 @@
 @end
 
 @interface PSGoogleReader : NSObject {
-    NSString *SID;
-    NSTimeInterval lastUpdate;
-    BOOL gettingReadingList;
-    id delegate;
-    
-    NSString *URLFormatGetSID;
+	NSString *SID;
+	NSTimeInterval lastUpdate;
+	BOOL gettingReadingList;
+	id delegate;
+	
+	NSString *URLFormatGetSID;
 	NSString *URLFormatGetToken;
 	NSString *URLFormatQuickAddFeed;
 	NSString *URLFormatAddFeed;
@@ -107,7 +107,7 @@
 	NSString *itemIdentifier;
 	NSString *feedURL;
 	NSString *feedId;
-    BOOL needsLogin;
+	BOOL needsLogin;
 	BOOL processingItemsToModify;
 	
 	NSMutableDictionary *cookieInfo;
@@ -116,7 +116,7 @@
 	NSMutableArray *tokenSelectors;
 	NSMutableArray *itemsToModify;
 	SBJSON *json;
-    EntitiesConverter *entitiesConverter;
+	EntitiesConverter *entitiesConverter;
 }
 
 @property (nonatomic, assign) id<PSGooglReaderDelegate> delegate;

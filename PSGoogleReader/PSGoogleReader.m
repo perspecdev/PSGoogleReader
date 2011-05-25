@@ -100,11 +100,11 @@
 	if ((self = [super init])) {
 		[self setURLFormats];
 		
-        self.SID = @"";
-        self.lastUpdate = 0;
-        self.gettingReadingList = NO;
-        self.delegate = nil;
-        
+		self.SID = @"";
+		self.lastUpdate = 0;
+		self.gettingReadingList = NO;
+		self.delegate = nil;
+		
 		self.token = @"no-token";
 		self.username = @"";
 		self.password = @"";
@@ -121,15 +121,15 @@
 		self.tokenSelectors = [NSMutableArray arrayWithCapacity:0];
 		self.itemsToModify = [NSMutableArray arrayWithCapacity:0];
 		self.processingItemsToModify = NO;
-        self.needsLogin = YES;
-        
-        SBJSON *aJSON = [[SBJSON alloc] init];
-        self.json = aJSON;
-        [aJSON release];
-        
-        EntitiesConverter *anEntitiesConverter = [[EntitiesConverter alloc] init];
-        self.entitiesConverter = anEntitiesConverter;
-        [anEntitiesConverter release];
+		self.needsLogin = YES;
+		
+		SBJSON *aJSON = [[SBJSON alloc] init];
+		self.json = aJSON;
+		[aJSON release];
+		
+		EntitiesConverter *anEntitiesConverter = [[EntitiesConverter alloc] init];
+		self.entitiesConverter = anEntitiesConverter;
+		[anEntitiesConverter release];
 	}
 	return self;
 }
@@ -144,14 +144,14 @@
 
 - (void)dealloc {
 	[SID release]; SID = nil;
-    
-    [token release]; token = nil;
+	
+	[token release]; token = nil;
 	[username release]; username = nil;
 	[password release]; password = nil;
 	[unixTimeCutoff release]; unixTimeCutoff = nil;
 	[excludeTarget release]; excludeTarget = nil;
 	[numResults release]; numResults = nil;
-    [continuationString release]; continuationString = nil;
+	[continuationString release]; continuationString = nil;
 	[sortOrder release]; sortOrder = nil;
 	[itemIdentifier release]; itemIdentifier = nil;
 	[feedURL release]; feedURL = nil;
@@ -162,7 +162,7 @@
 	[itemsToModify release]; itemsToModify = nil;
 	[postFields release]; postFields = nil;
 	[json release]; json = nil;
-    [entitiesConverter release]; entitiesConverter = nil;
+	[entitiesConverter release]; entitiesConverter = nil;
 	
 	[super dealloc];
 }
@@ -260,10 +260,10 @@
 									  , @"[token]", @"T"
 									  , nil];
 	NSDictionary *setFeedReadFields = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       @"[feed-id]", @"s"
-                                       , @"[unix-time-microseconds]", @"ts"
-                                       , @"[token]", @"T"
-                                       , nil];
+									   @"[feed-id]", @"s"
+									   , @"[unix-time-microseconds]", @"ts"
+									   , @"[token]", @"T"
+									   , nil];
 	NSDictionary *setStarredFields = [NSDictionary dictionaryWithObjectsAndKeys:
 									  @"user/-/state/com.google/starred", @"a"
 									  , @"true", @"async"
@@ -308,24 +308,24 @@
 										   , nil];
 	
 	postFields = [[NSMutableDictionary dictionaryWithObjectsAndKeys:
-                   getSIDFields, @"getSID"
-                   , quickAddFeedFields, @"quickAddFeed"
-                   , setFeedLabelFields, @"setFeedLabel"
-                   , addFeedFields, @"addFeed"
-                   , editFeedFields, @"editFeed"
-                   , removeFeedFields, @"removeFeed"
-                   , addTagFields, @"addTag"
-                   , removeTagFields, @"removeTag"
-                   , setReadFields, @"setRead"
-                   , setNotReadFields, @"setNotRead"
-                   , setFeedReadFields, @"setFeedRead"
-                   , setStarredFields, @"setStarred"
-                   , setNotStarredFields, @"setNotStarred"
-                   , setLikeFields, @"setLike"
-                   , setNotLikeFields, @"setNotLike"
-                   , setBroadcastFields, @"setBroadcast"
-                   , setNotBroadcastFields, @"setNotBroadcast"
-                   , nil] retain];
+				   getSIDFields, @"getSID"
+				   , quickAddFeedFields, @"quickAddFeed"
+				   , setFeedLabelFields, @"setFeedLabel"
+				   , addFeedFields, @"addFeed"
+				   , editFeedFields, @"editFeed"
+				   , removeFeedFields, @"removeFeed"
+				   , addTagFields, @"addTag"
+				   , removeTagFields, @"removeTag"
+				   , setReadFields, @"setRead"
+				   , setNotReadFields, @"setNotRead"
+				   , setFeedReadFields, @"setFeedRead"
+				   , setStarredFields, @"setStarred"
+				   , setNotStarredFields, @"setNotStarred"
+				   , setLikeFields, @"setLike"
+				   , setNotLikeFields, @"setNotLike"
+				   , setBroadcastFields, @"setBroadcast"
+				   , setNotBroadcastFields, @"setNotBroadcast"
+				   , nil] retain];
 }
 
 - (NSString *)populateURLFormatFields:(NSString *)URLFormat {
@@ -396,13 +396,13 @@
 }
 
 - (void)loginWithUsername:(NSString *)aUsername withPassword:(NSString *)aPassword {
-    NSString *theUsername = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)aUsername, NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), kCFStringEncodingUTF8);
+	NSString *theUsername = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)aUsername, NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), kCFStringEncodingUTF8);
 	NSString *thePassword = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)aPassword, NULL, CFSTR("￼=,!$&'()*+;@?\n\"<>#\t :/"), kCFStringEncodingUTF8);
 	self.username = theUsername;
-    self.password = thePassword;
-    [theUsername release];
-    [thePassword release];
-    
+	self.password = thePassword;
+	[theUsername release];
+	[thePassword release];
+	
 	NSString *URL = [self populateURLFormatFields:URLFormatGetSID];
 	
 	NSString *postData = [self getFormattedQueryStringFromDictionary:[postFields objectForKey:@"getSID"]];
@@ -427,7 +427,7 @@
 - (void)retrieveReadingList {
 	self.gettingReadingList = YES;
 	
-    self.unixTimeCutoff = [NSString stringWithFormat:@"%d", (long)[[NSDate date] timeIntervalSince1970]];
+	self.unixTimeCutoff = [NSString stringWithFormat:@"%d", (long)[[NSDate date] timeIntervalSince1970]];
 	self.sortOrder = @"d"; // descending order
 	self.excludeTarget = @"user/-/state/com.google/read"; // items marked as read
 	self.numResults = [NSString stringWithFormat:@"%d", kReadingListBatchSize];
@@ -465,7 +465,7 @@
 }
 
 - (void)quickAddFeed:(NSString *)aFeedURL {
-    self.feedURL = aFeedURL;
+	self.feedURL = aFeedURL;
 	
 	[self quickAddFeedFromPresetURL];
 }
@@ -522,29 +522,29 @@
 		
 		if ([actionToPerform isEqualToString:@"Mark as Read"]) {
 			NSString *URL = [self populateURLFormatFields:URLFormatSetRead];
-            self.itemIdentifier = itemId;
+			self.itemIdentifier = itemId;
 			NSString *postData = [self getFormattedQueryStringFromDictionary:[postFields objectForKey:@"setRead"]];
 			[self startConnectionWithURL:URL withIdentifier:@"Mark as Read" sendCookie:YES withPostData:postData];
 		} else if ([actionToPerform isEqualToString:@"Mark as Unread"]) {
 			NSString *URL = [self populateURLFormatFields:URLFormatSetNotRead];
-            self.itemIdentifier = itemId;
+			self.itemIdentifier = itemId;
 			NSString *postData = [self getFormattedQueryStringFromDictionary:[postFields objectForKey:@"setNotRead"]];
 			[self startConnectionWithURL:URL withIdentifier:@"Mark as Unread" sendCookie:YES withPostData:postData];
 		} else if ([actionToPerform isEqualToString:@"Mark Feed as Read"]) {
 			NSString *URL = [self populateURLFormatFields:URLFormatSetFeedRead];
-            self.itemIdentifier = @"";
+			self.itemIdentifier = @"";
 			self.feedId = itemId;
 			NSString *postData = [self getFormattedQueryStringFromDictionary:[postFields objectForKey:@"setFeedRead"]];
 			[self startConnectionWithURL:URL withIdentifier:@"Mark Feed as Read" sendCookie:YES withPostData:postData];
 		} else {
 			self.processingItemsToModify = NO;
 		}
-        
+		
 		[actionToPerform release];
 	} else {
 		self.processingItemsToModify = NO;
 	}
-    
+	
 }
 
 
@@ -552,12 +552,12 @@
 #pragma mark NSURLConnection delegate methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    // TODO: I think invalid SID (meaning we need to log back in) should actually only be 401.
-    // But there were some problems with just checking for 401 where we needed to log back in
-    // but the statusCode wasn't 401.  So just going the aggressive/safe route here...
+	// TODO: I think invalid SID (meaning we need to log back in) should actually only be 401.
+	// But there were some problems with just checking for 401 where we needed to log back in
+	// but the statusCode wasn't 401.  So just going the aggressive/safe route here...
 	if ([(NSHTTPURLResponse *)response statusCode] < 200 || [(NSHTTPURLResponse *)response statusCode] >= 300) {
 		self.needsLogin = YES;
-        [self.delegate googleReaderNeedsLogin];
+		[self.delegate googleReaderNeedsLogin];
 	}
 }
 
@@ -613,7 +613,7 @@
 			[self.delegate googleReaderInitializedAndReady];
 		}
 	} else if ([identifier isEqualToString:@"Token"] || [identifier isEqualToString:@"Token Try Again"]) {
-        self.token = [[self.responseData objectForKey:identifier] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		self.token = [[self.responseData objectForKey:identifier] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		
 		[self.responseData setObject:@"" forKey:identifier]; // need to reset the responseData for token in case there's another call coming in right behind it
 		
@@ -623,9 +623,9 @@
 				[self performSelector:NSSelectorFromString(selectorName)];
 			}
 		} else {
-            self.token = @"";
+			self.token = @"";
 		}
-        
+		
 	} else if ([identifier isEqualToString:@"Subscription List"]) {
 		NSArray *subscriptionList = [[self.json objectWithString:[[self.responseData objectForKey:identifier] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]] objectForKey:@"subscriptions"];
 		[self.delegate googleReaderSubscriptionList:subscriptionList];
@@ -641,7 +641,7 @@
 				[self.delegate googleReaderCouldNotGetReadingList];
 			} else {
 				BOOL isLastInSync;
-                self.continuationString = [responseObject objectForKey:@"continuation"];
+				self.continuationString = [responseObject objectForKey:@"continuation"];
 				if (self.continuationString != nil && ![self.continuationString isEqualToString:@""]) {
 					isLastInSync = NO;
 					[self retrieveReadingList];
@@ -650,94 +650,94 @@
 					self.continuationString = @"";
 				}
 				
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    NSMutableArray *processedItems = [[NSMutableArray alloc] init];
-                    
-                    for (NSDictionary *item in readingList) {
-                        NSString *itemId = [item objectForKey:@"id"];
-                        if (itemId == nil) continue;
-                        
-                        NSNumber *published = [item objectForKey:@"published"];
-                        if (published == nil || [published intValue] == 0) published = [NSNumber numberWithInt:[NSDate timeIntervalSinceReferenceDate]];
-                        
-                        NSNumber *updated = [item objectForKey:@"updated"];
-                        if (updated == nil || [updated intValue] == 0) updated = [NSNumber numberWithInt:[published intValue]];
-                        
-                        NSString *title = [item objectForKey:@"title"];
-                        if (title == nil) continue;
-                        
-                        NSString *content = [[item objectForKey:@"content"] objectForKey:@"content"];
-                        NSString *summary = [[item objectForKey:@"summary"] objectForKey:@"content"];
-                        if (summary == NULL) summary = @"";
-                        if (content == NULL) content = [NSString stringWithFormat:@"%@", summary];
-                        
-                        NSString *feedTitle = [[item objectForKey:@"origin"] objectForKey:@"title"];
-                        if (feedTitle == nil) continue;
-                        
-                        title = [entitiesConverter convertEntiesInString:title];
-                        summary = [entitiesConverter convertEntiesInString:summary];
-                        content = [entitiesConverter convertEntiesInString:content];
-                        feedTitle = [entitiesConverter convertEntiesInString:feedTitle];
-                        
-                        NSArray *alternate = [item objectForKey:@"alternate"];
-                        NSString *URL = @"";
-                        if (alternate != nil && [alternate count] > 0) {
-                            NSDictionary *firstAlternate = [alternate objectAtIndex:0];
-                            if (firstAlternate != nil) {
-                                NSString *itemURL = [firstAlternate objectForKey:@"href"];
-                                if (itemURL != nil) {
-                                    URL = itemURL;
-                                }
-                            }
-                        }
-                        
-                        NSString *streamId = [[item objectForKey:@"origin"] objectForKey:@"streamId"];
-                        if (streamId == nil) continue;
-                        
-                        NSString *itemFeedURL = [[item objectForKey:@"origin"] objectForKey:@"htmlUrl"];
-                        if (itemFeedURL == nil) continue;
-                        
-                        NSArray *categories = [item objectForKey:@"categories"];
-                        BOOL isRead = NO;
-                        if (categories != nil) {
-                            for (NSString *category in categories) {
-                                NSString *regexString = @"user/(.*?)/read$";
-                                NSString *matchedString = [category stringByMatching:regexString];
-                                if (matchedString != NULL) {
-                                    isRead = YES;
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        NSDictionary *processedItem = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                                       itemId, @"itemId"
-                                                       , published, @"published"
-                                                       , updated, @"updated"
-                                                       , title, @"title"
-                                                       , content, @"content"
-                                                       , summary, @"summary"
-                                                       , feedTitle, @"feedTitle"
-                                                       , URL, @"URL"
-                                                       , streamId, @"streamId"
-                                                       , itemFeedURL, @"itemFeedURL"
-                                                       , [NSNumber numberWithBool:isRead], @"isRead"
-                                                       , nil];
-                        [processedItems addObject:processedItem];
-                        [processedItem release];
-                    }
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.delegate googleReaderReadingListData:processedItems];
-                        [processedItems release];
-                        
-                        if (isLastInSync) {
-                            self.gettingReadingList = NO;
-                            self.lastUpdate = [[NSDate date] timeIntervalSince1970];
-                            [self.delegate googleReaderReadingListDataComplete];
-                        }
-                    });
-                });
+				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+					NSMutableArray *processedItems = [[NSMutableArray alloc] init];
+					
+					for (NSDictionary *item in readingList) {
+						NSString *itemId = [item objectForKey:@"id"];
+						if (itemId == nil) continue;
+						
+						NSNumber *published = [item objectForKey:@"published"];
+						if (published == nil || [published intValue] == 0) published = [NSNumber numberWithInt:[NSDate timeIntervalSinceReferenceDate]];
+						
+						NSNumber *updated = [item objectForKey:@"updated"];
+						if (updated == nil || [updated intValue] == 0) updated = [NSNumber numberWithInt:[published intValue]];
+						
+						NSString *title = [item objectForKey:@"title"];
+						if (title == nil) continue;
+						
+						NSString *content = [[item objectForKey:@"content"] objectForKey:@"content"];
+						NSString *summary = [[item objectForKey:@"summary"] objectForKey:@"content"];
+						if (summary == NULL) summary = @"";
+						if (content == NULL) content = [NSString stringWithFormat:@"%@", summary];
+						
+						NSString *feedTitle = [[item objectForKey:@"origin"] objectForKey:@"title"];
+						if (feedTitle == nil) continue;
+						
+						title = [entitiesConverter convertEntiesInString:title];
+						summary = [entitiesConverter convertEntiesInString:summary];
+						content = [entitiesConverter convertEntiesInString:content];
+						feedTitle = [entitiesConverter convertEntiesInString:feedTitle];
+						
+						NSArray *alternate = [item objectForKey:@"alternate"];
+						NSString *URL = @"";
+						if (alternate != nil && [alternate count] > 0) {
+							NSDictionary *firstAlternate = [alternate objectAtIndex:0];
+							if (firstAlternate != nil) {
+								NSString *itemURL = [firstAlternate objectForKey:@"href"];
+								if (itemURL != nil) {
+									URL = itemURL;
+								}
+							}
+						}
+						
+						NSString *streamId = [[item objectForKey:@"origin"] objectForKey:@"streamId"];
+						if (streamId == nil) continue;
+						
+						NSString *itemFeedURL = [[item objectForKey:@"origin"] objectForKey:@"htmlUrl"];
+						if (itemFeedURL == nil) continue;
+						
+						NSArray *categories = [item objectForKey:@"categories"];
+						BOOL isRead = NO;
+						if (categories != nil) {
+							for (NSString *category in categories) {
+								NSString *regexString = @"user/(.*?)/read$";
+								NSString *matchedString = [category stringByMatching:regexString];
+								if (matchedString != NULL) {
+									isRead = YES;
+									break;
+								}
+							}
+						}
+						
+						NSDictionary *processedItem = [[NSDictionary alloc] initWithObjectsAndKeys:
+													   itemId, @"itemId"
+													   , published, @"published"
+													   , updated, @"updated"
+													   , title, @"title"
+													   , content, @"content"
+													   , summary, @"summary"
+													   , feedTitle, @"feedTitle"
+													   , URL, @"URL"
+													   , streamId, @"streamId"
+													   , itemFeedURL, @"itemFeedURL"
+													   , [NSNumber numberWithBool:isRead], @"isRead"
+													   , nil];
+						[processedItems addObject:processedItem];
+						[processedItem release];
+					}
+					
+					dispatch_async(dispatch_get_main_queue(), ^{
+						[self.delegate googleReaderReadingListData:processedItems];
+						[processedItems release];
+						
+						if (isLastInSync) {
+							self.gettingReadingList = NO;
+							self.lastUpdate = [[NSDate date] timeIntervalSince1970];
+							[self.delegate googleReaderReadingListDataComplete];
+						}
+					});
+				});
 			}
 		}
 	} else if (
@@ -754,9 +754,9 @@
 			return;
 		}
 		
-        if ([[self.responseData objectForKey:identifier] isEqualToString:@"OK"]) {
-            [self.delegate googleReaderIsReadSynced:[[self.itemsToModify objectAtIndex:0] objectForKey:identifier]];
-        }
+		if ([[self.responseData objectForKey:identifier] isEqualToString:@"OK"]) {
+			[self.delegate googleReaderIsReadSynced:[[self.itemsToModify objectAtIndex:0] objectForKey:identifier]];
+		}
 		[self.itemsToModify removeObjectAtIndex:0];
 		[self processItemsToModify];
 	} else if ([identifier isEqualToString:@"Quick Add Feed"]) {
@@ -766,7 +766,7 @@
 		} else {
 			[self.delegate googleReaderCouldNotAddSubscription];
 		}
-        
+		
 	} else if ([identifier isEqualToString:@"Remove Feed"]) {
 		NSString *response = [self.responseData objectForKey:identifier];
 		

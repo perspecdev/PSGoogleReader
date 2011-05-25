@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3423478F138D2F8E00A1B773 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 3423478E138D2F8E00A1B773 /* README */; };
 		34295806138BB27D00F8352F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34295805138BB27D00F8352F /* UIKit.framework */; };
 		34295808138BB27D00F8352F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34295807138BB27D00F8352F /* Foundation.framework */; };
 		3429580A138BB27D00F8352F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34295809138BB27D00F8352F /* CoreGraphics.framework */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3423478E138D2F8E00A1B773 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		34295801138BB27D00F8352F /* PSGoogleReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSGoogleReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34295805138BB27D00F8352F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		34295807138BB27D00F8352F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,6 +120,7 @@
 		3429580B138BB27D00F8352F /* PSGoogleReader */ = {
 			isa = PBXGroup;
 			children = (
+				3423478E138D2F8E00A1B773 /* README */,
 				34295814138BB27D00F8352F /* PSGoogleReaderAppDelegate.h */,
 				34295815138BB27D00F8352F /* PSGoogleReaderAppDelegate.m */,
 				3429582C138BB42B00F8352F /* Models */,
@@ -251,6 +254,7 @@
 				34295810138BB27D00F8352F /* InfoPlist.strings in Resources */,
 				34295819138BB27D00F8352F /* MainWindow.xib in Resources */,
 				3429581F138BB27D00F8352F /* DetailView.xib in Resources */,
+				3423478F138D2F8E00A1B773 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
