@@ -28,7 +28,6 @@
 		34295848138BB4CA00F8352F /* EntitiesConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295847138BB4CA00F8352F /* EntitiesConverter.m */; };
 		343AAD37138D27FB0033939C /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AAD36138D27FB0033939C /* libxml2.2.dylib */; };
 		343AAD3A138D28240033939C /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AAD39138D28240033939C /* libicucore.A.dylib */; };
-		343AAD3C138D2B1F0033939C /* README in Resources */ = {isa = PBXBuildFile; fileRef = 343AAD3B138D2B1F0033939C /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +68,6 @@
 		34295847138BB4CA00F8352F /* EntitiesConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntitiesConverter.m; sourceTree = "<group>"; };
 		343AAD36138D27FB0033939C /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		343AAD39138D28240033939C /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = usr/lib/libicucore.A.dylib; sourceTree = SDKROOT; };
-		343AAD3B138D2B1F0033939C /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +125,6 @@
 				3429582B138BB42400F8352F /* Controllers */,
 				3429582E138BB47B00F8352F /* Utilities */,
 				3429580C138BB27D00F8352F /* Supporting Files */,
-				343AAD3B138D2B1F0033939C /* README */,
 			);
 			path = PSGoogleReader;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 				34295810138BB27D00F8352F /* InfoPlist.strings in Resources */,
 				34295819138BB27D00F8352F /* MainWindow.xib in Resources */,
 				3429581F138BB27D00F8352F /* DetailView.xib in Resources */,
-				343AAD3C138D2B1F0033939C /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
