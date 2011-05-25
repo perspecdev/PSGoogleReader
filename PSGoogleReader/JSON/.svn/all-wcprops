@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON
+END
+JSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/JSON.h
+END
+SBJsonBase.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJsonBase.h
+END
+SBJsonParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJsonParser.h
+END
+SBJsonWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJsonWriter.h
+END
+SBJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJSON.h
+END
+SBJsonBase.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJsonBase.m
+END
+SBJsonParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJsonParser.m
+END
+SBJsonWriter.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJsonWriter.m
+END
+NSObject+SBJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/NSObject+SBJSON.h
+END
+NSString+SBJSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/NSString+SBJSON.h
+END
+SBJSON.m
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/SBJSON.m
+END
+NSObject+SBJSON.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/NSObject+SBJSON.m
+END
+NSString+SBJSON.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/newsstand/!svn/ver/4/Newsstand/Classes/JSON/NSString+SBJSON.m
+END
