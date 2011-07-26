@@ -1,0 +1,10 @@
+PSGoogleReader is a class that connects to Google Reader.  I don't have a pretty
+demo UI set up, so you won't see much in the simulator when you run this app.  Check
+NSLog output to see very simplified demo results.
+
+Be sure to set your client (app) name in PSGoogleReader.m
+Set your Google Reader username/password in PSGoogleReaderAppDelegate.m
+
+Code license is pretty generous.  See comments at the top of PSGoogleReader.m for details.
+
+Email me if you have any questions: daniel@perspecdev.com

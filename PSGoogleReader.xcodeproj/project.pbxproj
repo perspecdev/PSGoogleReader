@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34295806138BB27D00F8352F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34295805138BB27D00F8352F /* UIKit.framework */; };
+		34295808138BB27D00F8352F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34295807138BB27D00F8352F /* Foundation.framework */; };
+		3429580A138BB27D00F8352F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34295809138BB27D00F8352F /* CoreGraphics.framework */; };
+		34295810138BB27D00F8352F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3429580E138BB27D00F8352F /* InfoPlist.strings */; };
+		34295813138BB27D00F8352F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295812138BB27D00F8352F /* main.m */; };
+		34295816138BB27D00F8352F /* PSGoogleReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295815138BB27D00F8352F /* PSGoogleReaderAppDelegate.m */; };
+		34295819138BB27D00F8352F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34295817138BB27D00F8352F /* MainWindow.xib */; };
+		3429581C138BB27D00F8352F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3429581B138BB27D00F8352F /* DetailViewController.m */; };
+		3429581F138BB27D00F8352F /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3429581D138BB27D00F8352F /* DetailView.xib */; };
+		34295822138BB27D00F8352F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295821138BB27D00F8352F /* RootViewController.m */; };
+		3429582A138BB34200F8352F /* PSGoogleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295829138BB34200F8352F /* PSGoogleReader.m */; };
+		34295831138BB49C00F8352F /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295830138BB49C00F8352F /* RegexKitLite.m */; };
+		34295840138BB4AF00F8352F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295835138BB4AF00F8352F /* NSObject+SBJSON.m */; };
+		34295841138BB4AF00F8352F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295837138BB4AF00F8352F /* NSString+SBJSON.m */; };
+		34295842138BB4AF00F8352F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295839138BB4AF00F8352F /* SBJSON.m */; };
+		34295843138BB4AF00F8352F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3429583B138BB4AF00F8352F /* SBJsonBase.m */; };
+		34295844138BB4AF00F8352F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3429583D138BB4AF00F8352F /* SBJsonParser.m */; };
+		34295845138BB4AF00F8352F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3429583F138BB4AF00F8352F /* SBJsonWriter.m */; };
+		34295848138BB4CA00F8352F /* EntitiesConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 34295847138BB4CA00F8352F /* EntitiesConverter.m */; };
+		343AAD37138D27FB0033939C /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AAD36138D27FB0033939C /* libxml2.2.dylib */; };
+		343AAD3A138D28240033939C /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 343AAD39138D28240033939C /* libicucore.A.dylib */; };
+		343AAD3C138D2B1F0033939C /* README in Resources */ = {isa = PBXBuildFile; fileRef = 343AAD3B138D2B1F0033939C /* README */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		34295801138BB27D00F8352F /* PSGoogleReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSGoogleReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34295805138BB27D00F8352F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		34295807138BB27D00F8352F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		34295809138BB27D00F8352F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3429580D138BB27D00F8352F /* PSGoogleReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSGoogleReader-Info.plist"; sourceTree = "<group>"; };
+		3429580F138BB27D00F8352F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34295811138BB27D00F8352F /* PSGoogleReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PSGoogleReader-Prefix.pch"; sourceTree = "<group>"; };
+		34295812138BB27D00F8352F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34295814138BB27D00F8352F /* PSGoogleReaderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSGoogleReaderAppDelegate.h; sourceTree = "<group>"; };
+		34295815138BB27D00F8352F /* PSGoogleReaderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSGoogleReaderAppDelegate.m; sourceTree = "<group>"; };
+		34295818138BB27D00F8352F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		3429581A138BB27D00F8352F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3429581B138BB27D00F8352F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3429581E138BB27D00F8352F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
+		34295820138BB27D00F8352F /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		34295821138BB27D00F8352F /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		34295828138BB34200F8352F /* PSGoogleReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSGoogleReader.h; sourceTree = "<group>"; };
+		34295829138BB34200F8352F /* PSGoogleReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSGoogleReader.m; sourceTree = "<group>"; };
+		3429582F138BB49C00F8352F /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		34295830138BB49C00F8352F /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		34295833138BB4AF00F8352F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		34295834138BB4AF00F8352F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		34295835138BB4AF00F8352F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		34295836138BB4AF00F8352F /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		34295837138BB4AF00F8352F /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		34295838138BB4AF00F8352F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		34295839138BB4AF00F8352F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		3429583A138BB4AF00F8352F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		3429583B138BB4AF00F8352F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		3429583C138BB4AF00F8352F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		3429583D138BB4AF00F8352F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		3429583E138BB4AF00F8352F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		3429583F138BB4AF00F8352F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		34295846138BB4CA00F8352F /* EntitiesConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesConverter.h; sourceTree = "<group>"; };
+		34295847138BB4CA00F8352F /* EntitiesConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntitiesConverter.m; sourceTree = "<group>"; };
+		343AAD36138D27FB0033939C /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		343AAD39138D28240033939C /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = usr/lib/libicucore.A.dylib; sourceTree = SDKROOT; };
+		343AAD3B138D2B1F0033939C /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		342957FE138BB27D00F8352F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34295806138BB27D00F8352F /* UIKit.framework in Frameworks */,
+				34295808138BB27D00F8352F /* Foundation.framework in Frameworks */,
+				3429580A138BB27D00F8352F /* CoreGraphics.framework in Frameworks */,
+				343AAD37138D27FB0033939C /* libxml2.2.dylib in Frameworks */,
+				343AAD3A138D28240033939C /* libicucore.A.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		342957F6138BB27C00F8352F = {
+			isa = PBXGroup;
+			children = (
+				3429580B138BB27D00F8352F /* PSGoogleReader */,
+				34295804138BB27D00F8352F /* Frameworks */,
+				34295802138BB27D00F8352F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		34295802138BB27D00F8352F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34295801138BB27D00F8352F /* PSGoogleReader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34295804138BB27D00F8352F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				343AAD39138D28240033939C /* libicucore.A.dylib */,
+				343AAD36138D27FB0033939C /* libxml2.2.dylib */,
+				34295805138BB27D00F8352F /* UIKit.framework */,
+				34295807138BB27D00F8352F /* Foundation.framework */,
+				34295809138BB27D00F8352F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3429580B138BB27D00F8352F /* PSGoogleReader */ = {
+			isa = PBXGroup;
+			children = (
+				34295814138BB27D00F8352F /* PSGoogleReaderAppDelegate.h */,
+				34295815138BB27D00F8352F /* PSGoogleReaderAppDelegate.m */,
+				3429582C138BB42B00F8352F /* Models */,
+				3429582D138BB43900F8352F /* Views */,
+				3429582B138BB42400F8352F /* Controllers */,
+				3429582E138BB47B00F8352F /* Utilities */,
+				3429580C138BB27D00F8352F /* Supporting Files */,
+				343AAD3B138D2B1F0033939C /* README */,
+			);
+			path = PSGoogleReader;
+			sourceTree = "<group>";
+		};
+		3429580C138BB27D00F8352F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3429580D138BB27D00F8352F /* PSGoogleReader-Info.plist */,
+				3429580E138BB27D00F8352F /* InfoPlist.strings */,
+				34295811138BB27D00F8352F /* PSGoogleReader-Prefix.pch */,
+				34295812138BB27D00F8352F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3429582B138BB42400F8352F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3429581A138BB27D00F8352F /* DetailViewController.h */,
+				3429581B138BB27D00F8352F /* DetailViewController.m */,
+				34295820138BB27D00F8352F /* RootViewController.h */,
+				34295821138BB27D00F8352F /* RootViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3429582C138BB42B00F8352F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				34295828138BB34200F8352F /* PSGoogleReader.h */,
+				34295829138BB34200F8352F /* PSGoogleReader.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3429582D138BB43900F8352F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34295817138BB27D00F8352F /* MainWindow.xib */,
+				3429581D138BB27D00F8352F /* DetailView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3429582E138BB47B00F8352F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				34295832138BB4AF00F8352F /* JSON */,
+				34295846138BB4CA00F8352F /* EntitiesConverter.h */,
+				34295847138BB4CA00F8352F /* EntitiesConverter.m */,
+				3429582F138BB49C00F8352F /* RegexKitLite.h */,
+				34295830138BB49C00F8352F /* RegexKitLite.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		34295832138BB4AF00F8352F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				34295833138BB4AF00F8352F /* JSON.h */,
+				34295834138BB4AF00F8352F /* NSObject+SBJSON.h */,
+				34295835138BB4AF00F8352F /* NSObject+SBJSON.m */,
+				34295836138BB4AF00F8352F /* NSString+SBJSON.h */,
+				34295837138BB4AF00F8352F /* NSString+SBJSON.m */,
+				34295838138BB4AF00F8352F /* SBJSON.h */,
+				34295839138BB4AF00F8352F /* SBJSON.m */,
+				3429583A138BB4AF00F8352F /* SBJsonBase.h */,
+				3429583B138BB4AF00F8352F /* SBJsonBase.m */,
+				3429583C138BB4AF00F8352F /* SBJsonParser.h */,
+				3429583D138BB4AF00F8352F /* SBJsonParser.m */,
+				3429583E138BB4AF00F8352F /* SBJsonWriter.h */,
+				3429583F138BB4AF00F8352F /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34295800138BB27D00F8352F /* PSGoogleReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34295825138BB27D00F8352F /* Build configuration list for PBXNativeTarget "PSGoogleReader" */;
+			buildPhases = (
+				342957FD138BB27D00F8352F /* Sources */,
+				342957FE138BB27D00F8352F /* Frameworks */,
+				342957FF138BB27D00F8352F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSGoogleReader;
+			productName = PSGoogleReader;
+			productReference = 34295801138BB27D00F8352F /* PSGoogleReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		342957F8138BB27C00F8352F /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 342957FB138BB27C00F8352F /* Build configuration list for PBXProject "PSGoogleReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 342957F6138BB27C00F8352F;
+			productRefGroup = 34295802138BB27D00F8352F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34295800138BB27D00F8352F /* PSGoogleReader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		342957FF138BB27D00F8352F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34295810138BB27D00F8352F /* InfoPlist.strings in Resources */,
+				34295819138BB27D00F8352F /* MainWindow.xib in Resources */,
+				3429581F138BB27D00F8352F /* DetailView.xib in Resources */,
+				343AAD3C138D2B1F0033939C /* README in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		342957FD138BB27D00F8352F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34295813138BB27D00F8352F /* main.m in Sources */,
+				34295816138BB27D00F8352F /* PSGoogleReaderAppDelegate.m in Sources */,
+				3429581C138BB27D00F8352F /* DetailViewController.m in Sources */,
+				34295822138BB27D00F8352F /* RootViewController.m in Sources */,
+				3429582A138BB34200F8352F /* PSGoogleReader.m in Sources */,
+				34295831138BB49C00F8352F /* RegexKitLite.m in Sources */,
+				34295840138BB4AF00F8352F /* NSObject+SBJSON.m in Sources */,
+				34295841138BB4AF00F8352F /* NSString+SBJSON.m in Sources */,
+				34295842138BB4AF00F8352F /* SBJSON.m in Sources */,
+				34295843138BB4AF00F8352F /* SBJsonBase.m in Sources */,
+				34295844138BB4AF00F8352F /* SBJsonParser.m in Sources */,
+				34295845138BB4AF00F8352F /* SBJsonWriter.m in Sources */,
+				34295848138BB4CA00F8352F /* EntitiesConverter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3429580E138BB27D00F8352F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3429580F138BB27D00F8352F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		34295817138BB27D00F8352F /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34295818138BB27D00F8352F /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		3429581D138BB27D00F8352F /* DetailView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3429581E138BB27D00F8352F /* en */,
+			);
+			name = DetailView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		34295823138BB27D00F8352F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		34295824138BB27D00F8352F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		34295826138BB27D00F8352F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSGoogleReader/PSGoogleReader-Prefix.pch";
+				INFOPLIST_FILE = "PSGoogleReader/PSGoogleReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		34295827138BB27D00F8352F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSGoogleReader/PSGoogleReader-Prefix.pch";
+				INFOPLIST_FILE = "PSGoogleReader/PSGoogleReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		342957FB138BB27C00F8352F /* Build configuration list for PBXProject "PSGoogleReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34295823138BB27D00F8352F /* Debug */,
+				34295824138BB27D00F8352F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34295825138BB27D00F8352F /* Build configuration list for PBXNativeTarget "PSGoogleReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34295826138BB27D00F8352F /* Debug */,
+				34295827138BB27D00F8352F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 342957F8138BB27C00F8352F /* Project object */;
+}
