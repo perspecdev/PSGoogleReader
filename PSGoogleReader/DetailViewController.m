@@ -11,7 +11,7 @@
 #import "RootViewController.h"
 
 @interface DetailViewController ()
-@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, strong) UIPopoverController *popoverController;
 - (void)configureView;
 @end
 
@@ -33,8 +33,7 @@
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
-        [_detailItem release];
-        _detailItem = [newDetailItem retain];
+        _detailItem = newDetailItem;
         
         // Update the view.
         [self configureView];
@@ -84,7 +83,6 @@
     NSMutableArray *items = [[self.toolbar items] mutableCopy];
     [items insertObject:barButtonItem atIndex:0];
     [self.toolbar setItems:items animated:YES];
-    [items release];
     self.popoverController = pc;
 }
 
@@ -94,7 +92,6 @@
     NSMutableArray *items = [[self.toolbar items] mutableCopy];
     [items removeObjectAtIndex:0];
     [self.toolbar setItems:items animated:YES];
-    [items release];
     self.popoverController = nil;
 }
 
@@ -123,15 +120,6 @@
     [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)dealloc
-{
-    [_myPopoverController release];
-    [_toolbar release];
-    [_detailItem release];
-    [_detailDescriptionLabel release];
-    [super dealloc];
 }
 
 @end

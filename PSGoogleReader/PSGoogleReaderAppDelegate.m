@@ -31,8 +31,8 @@
     
     networkActivityCounter = 0;
     
-    NSString *username = @"google-reader-username";
-    NSString *password = @"google-reader-password";
+    NSString *username = @"google-acount-username";
+    NSString *password = @"google-account-password";
     googleReader = [[PSGoogleReader alloc] init];
     // you should store googleReader.SID when the googleReaderInitializedAndReady method returns, then
     // pass that value to initWithSID: rather than always logging in with the user's username & password
@@ -76,16 +76,6 @@
      */
 }
 
-- (void)dealloc {
-    [googleReader release];
-    
-    [_window release];
-    [_splitViewController release];
-    [_rootViewController release];
-    [_detailViewController release];
-    [super dealloc];
-}
-
 # pragma mark - PSGoogleReaderDelegate methods
 
 - (void)googleReaderIncrementNetworkActivity {
@@ -111,7 +101,7 @@
     NSLog(@"Google Reader needs login");
 }
 
-- (void)googleReaderReadingListData:(NSArray *)items {
+- (void)googleReaderReadingListData:(NSArray *)items isLastBatch:(BOOL)isLastBatch {
     for (NSDictionary *item in items) {
         NSLog(@"%@", [item objectForKey:@"title"]);
     }
@@ -121,8 +111,12 @@
     return YES;
 }
 
-- (void)googleReaderReadingListDataComplete {
+- (void)googleReaderReadingListDataDidComplete {
     NSLog(@"Reading list data complete");
+}
+
+- (void)googleReaderReadingListDataWillComplete {
+    //
 }
 
 - (void)googleReaderCouldNotGetReadingList {

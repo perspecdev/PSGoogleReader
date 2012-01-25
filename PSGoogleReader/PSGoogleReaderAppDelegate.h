@@ -14,17 +14,17 @@
 
 @class DetailViewController;
 
-@interface PSGoogleReaderAppDelegate : NSObject <UIApplicationDelegate, PSGooglReaderDelegate> {
+@interface PSGoogleReaderAppDelegate : NSObject <UIApplicationDelegate, PSGoogleReaderDelegate> {
     PSGoogleReader *googleReader;
     int networkActivityCounter;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;
+@property (nonatomic, weak) IBOutlet UISplitViewController *splitViewController;
 
-@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
+@property (nonatomic, weak) IBOutlet RootViewController *rootViewController;
 
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, weak) IBOutlet DetailViewController *detailViewController;
 
 @end

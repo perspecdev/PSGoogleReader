@@ -27,32 +27,32 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
+#import "NSObject+SBJson.h"
+#import "SBJsonWriter.h"
+#import "SBJsonParser.h"
 
-/**
- @brief Adds JSON parsing methods to NSString
- 
-This is a category on NSString that adds methods for parsing the target string.
-*/
-@interface NSString (NSString_SBJSON)
+@implementation NSObject (NSObject_SBJsonWriting)
+
+- (NSString *)JSONRepresentation {
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init];    
+    NSString *json = [writer stringWithObject:self];
+    if (!json)
+        NSLog(@"-JSONRepresentation failed. Error is: %@", writer.error);
+    return json;
+}
+
+@end
 
 
-/**
- @brief Returns the object represented in the receiver, or nil on error. 
- 
- Returns a a scalar object represented by the string's JSON fragment representation.
- 
- @deprecated Given we bill ourselves as a "strict" JSON library, this method should be removed.
- */
-- (id)JSONFragmentValue;
 
-/**
- @brief Returns the NSDictionary or NSArray represented by the current string's JSON representation.
- 
- Returns the dictionary or array represented in the receiver, or nil on error.
+@implementation NSString (NSString_SBJsonParsing)
 
- Returns the NSDictionary or NSArray represented by the current string's JSON representation.
- */
-- (id)JSONValue;
+- (id)JSONValue {
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    id repr = [parser objectWithString:self];
+    if (!repr)
+        NSLog(@"-JSONValue failed. Error is: %@", parser.error);
+    return repr;
+}
 
 @end

@@ -35,18 +35,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class SBJSON;
-@class EntitiesConverter;
+@class SBJsonParser;
 
-@protocol PSGooglReaderDelegate
+@protocol PSGoogleReaderDelegate
 
 - (void)googleReaderIncrementNetworkActivity;
 - (void)googleReaderDecrementNetworkActivity;
 - (void)googleReaderInitializedAndReady;
 - (void)googleReaderNeedsLogin;
-- (void)googleReaderReadingListData:(NSArray *)items;
+- (void)googleReaderReadingListData:(NSArray *)items isLastBatch:(BOOL)isLastBatch;
 - (BOOL)googleReaderIsReadyForMoreItems;
-- (void)googleReaderReadingListDataComplete;
+- (void)googleReaderReadingListDataWillComplete;
+- (void)googleReaderReadingListDataDidComplete;
 - (void)googleReaderCouldNotGetReadingList;
 - (void)googleReaderSubscriptionList:(NSArray *)aSubscriptionList;
 - (void)googleReaderIsReadSynced:(NSString *)itemId;
@@ -58,11 +58,11 @@
 
 @end
 
-@interface PSGoogleReader : NSObject {
+@interface PSGoogleReader : NSObject <NSURLConnectionDataDelegate> {
     NSString *SID;
     NSTimeInterval lastUpdate;
     BOOL gettingReadingList;
-    id delegate;
+    id __weak delegate;
     
     NSString *URLFormatGetSID;
 	NSString *URLFormatGetToken;
@@ -75,7 +75,9 @@
 	NSString *URLFormatGetUserInfo;
 	NSString *URLFormatGetFeed;
 	NSString *URLFormatGetLabel;
-	NSString *URLFormatGetReadingList;
+	NSString *URLFormatGetReadingListIds;
+    NSString *URLFormatGetStarredIds;
+    NSString *URLFormatGetReadingListContents;
 	NSString *URLFormatGetSubscriptionList;
 	NSString *URLFormatGetStarred;
 	NSString *URLFormatGetBroadcasted;
@@ -111,21 +113,24 @@
 	BOOL processingItemsToModify;
 	
 	NSMutableDictionary *cookieInfo;
+    NSMutableSet *connections;
 	NSMutableDictionary *connectionIdentifiers;
 	NSMutableDictionary *responseData;
 	NSMutableArray *tokenSelectors;
 	NSMutableArray *itemsToModify;
-	SBJSON *json;
-    EntitiesConverter *entitiesConverter;
+	SBJsonParser *json;
 }
 
-@property (nonatomic, assign) id<PSGooglReaderDelegate> delegate;
-@property (nonatomic, retain) NSString *SID;
+@property (nonatomic, weak) id<PSGoogleReaderDelegate> delegate;
+@property (nonatomic, strong) NSString *SID;
+@property (nonatomic, readonly) NSString *username;
+@property (nonatomic, readonly) NSString *password;
 @property (nonatomic) NSTimeInterval lastUpdate;
 @property (nonatomic) BOOL gettingReadingList;
 
 - (id)init;
 - (id)initWithSID:(NSString *)anSID;
+- (void)resetForNewRequest;
 - (void)setURLFormats;
 - (void)loginWithUsername:(NSString *)aUsername withPassword:(NSString *)aPassword;
 - (void)logout;
@@ -135,11 +140,15 @@
 - (void)retrieveReadingList;
 - (void)markAsRead:(NSString *)itemId;
 - (void)markAsUnread:(NSString *)itemId;
+- (void)markAsStarred:(NSString *)itemId;
+- (void)markAsUnstarred:(NSString *)itemId;
 - (void)markFeedAsRead:(NSString *)aFeedId;
 - (void)quickAddFeed:(NSString *)aFeedURL;
 - (void)quickAddFeedFromPresetURL;
 - (void)removeFeed:(NSString *)aFeedId;
 - (void)removeFeedFromPresetId;
 - (void)processItemsToModify;
+- (void)rerunActionForConnectionIdentifier:(NSString *)identifier;
+- (void)cancelAllConnections;
 
 @end

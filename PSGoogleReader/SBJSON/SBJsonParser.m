@@ -1,5 +1,5 @@
 /*
- Copyright (C) 2009 Stig Brautaset. All rights reserved.
+ Copyright (C) 2009,2010 Stig Brautaset. All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
@@ -27,52 +27,70 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SBJsonBase.h"
-NSString * SBJSONErrorDomain = @"org.brautaset.JSON.ErrorDomain";
+#import "SBJsonParser.h"
+#import "SBJsonStreamParser.h"
+#import "SBJsonStreamParserAccumulator.h"
 
+@implementation SBJsonParser
 
-@implementation SBJsonBase
-
-@synthesize errorTrace;
 @synthesize maxDepth;
+@synthesize error;
 
 - (id)init {
     self = [super init];
     if (self)
-        self.maxDepth = 512;
+        self.maxDepth = 32u;
     return self;
 }
 
-- (void)dealloc {
-    [errorTrace release];
-    [super dealloc];
-}
 
-- (void)addErrorWithCode:(NSUInteger)code description:(NSString*)str {
-    NSDictionary *userInfo;
-    if (!errorTrace) {
-        errorTrace = [NSMutableArray new];
-        userInfo = [NSDictionary dictionaryWithObject:str forKey:NSLocalizedDescriptionKey];
-        
-    } else {
-        userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-                    str, NSLocalizedDescriptionKey,
-                    [errorTrace lastObject], NSUnderlyingErrorKey,
-                    nil];
+#pragma mark Methods
+
+- (id)objectWithData:(NSData *)data {
+
+    if (!data) {
+        self.error = @"Input was 'nil'";
+        return nil;
     }
-    
-    NSError *error = [NSError errorWithDomain:SBJSONErrorDomain code:code userInfo:userInfo];
 
-    [self willChangeValueForKey:@"errorTrace"];
-    [errorTrace addObject:error];
-    [self didChangeValueForKey:@"errorTrace"];
+	SBJsonStreamParserAccumulator *accumulator = [[SBJsonStreamParserAccumulator alloc] init];
+    
+	SBJsonStreamParser *parser = [[SBJsonStreamParser alloc] init];
+	parser.maxDepth = self.maxDepth;
+	parser.delegate = accumulator;
+	
+	switch ([parser parse:data]) {
+		case SBJsonStreamParserComplete:
+            return accumulator.value;
+			break;
+			
+		case SBJsonStreamParserWaitingForData:
+		    self.error = @"Unexpected end of input";
+			break;
+
+		case SBJsonStreamParserError:
+		    self.error = parser.error;
+			break;
+	}
+	
+	return nil;
 }
 
-- (void)clearErrorTrace {
-    [self willChangeValueForKey:@"errorTrace"];
-    [errorTrace release];
-    errorTrace = nil;
-    [self didChangeValueForKey:@"errorTrace"];
+- (id)objectWithString:(NSString *)repr {
+	return [self objectWithData:[repr dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+- (id)objectWithString:(NSString*)repr error:(NSError**)error_ {
+	id tmp = [self objectWithString:repr];
+    if (tmp)
+        return tmp;
+    
+    if (error_) {
+		NSDictionary *ui = [NSDictionary dictionaryWithObjectsAndKeys:error, NSLocalizedDescriptionKey, nil];
+        *error_ = [NSError errorWithDomain:@"org.brautaset.SBJsonParser.ErrorDomain" code:0 userInfo:ui];
+	}
+	
+    return nil;
 }
 
 @end
